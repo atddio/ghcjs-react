@@ -4,391 +4,391 @@
 module React.DOM where
 import React.Internal
 import React.Types
-import Data.Text (Text)
+import GHCJS.Types
 
-a_ :: Element
-a_ = createElement ("a" :: Text)
+a_ :: Element ps
+a_ = domElem ("a" :: JSString)
 
-abbr_ :: Element
-abbr_ = createElement ("abbr" :: Text)
+abbr_ :: Element ps
+abbr_ = domElem ("abbr" :: JSString)
 
-address_ :: Element
-address_ = createElement ("address" :: Text)
+address_ :: Element ps
+address_ = domElem ("address" :: JSString)
 
-area_ :: Element
-area_ = createElement ("area" :: Text)
+area_ :: Element ps
+area_ = domElem ("area" :: JSString)
 
-article_ :: Element
-article_ = createElement ("article" :: Text)
+article_ :: Element ps
+article_ = domElem ("article" :: JSString)
 
-aside_ :: Element
-aside_ = createElement ("aside" :: Text)
+aside_ :: Element ps
+aside_ = domElem ("aside" :: JSString)
 
-audio_ :: Element
-audio_ = createElement ("audio" :: Text)
+audio_ :: Element ps
+audio_ = domElem ("audio" :: JSString)
 
-b_ :: Element
-b_ = createElement ("b" :: Text)
+b_ :: Element ps
+b_ = domElem ("b" :: JSString)
 
-base_ :: Element
-base_ = createElement ("base" :: Text)
+base_ :: Element ps
+base_ = domElem ("base" :: JSString)
 
-bdi_ :: Element
-bdi_ = createElement ("bdi" :: Text)
+bdi_ :: Element ps
+bdi_ = domElem ("bdi" :: JSString)
 
-bdo_ :: Element
-bdo_ = createElement ("bdo" :: Text)
+bdo_ :: Element ps
+bdo_ = domElem ("bdo" :: JSString)
 
-big_ :: Element
-big_ = createElement ("big" :: Text)
+big_ :: Element ps
+big_ = domElem ("big" :: JSString)
 
-blockquote_ :: Element
-blockquote_ = createElement ("blockquote" :: Text)
+blockquote_ :: Element ps
+blockquote_ = domElem ("blockquote" :: JSString)
 
-body_ :: Element
-body_ = createElement ("body" :: Text)
+body_ :: Element ps
+body_ = domElem ("body" :: JSString)
 
-br_ :: Element
-br_ = createElement ("br" :: Text)
+br_ :: Element ps
+br_ = domElem ("br" :: JSString)
 
-button_ :: Element
-button_ = createElement ("button" :: Text)
+button_ :: Element ps
+button_ = domElem ("button" :: JSString)
 
-canvas_ :: Element
-canvas_ = createElement ("canvas" :: Text)
+canvas_ :: Element ps
+canvas_ = domElem ("canvas" :: JSString)
 
-caption_ :: Element
-caption_ = createElement ("caption" :: Text)
+caption_ :: Element ps
+caption_ = domElem ("caption" :: JSString)
 
-cite_ :: Element
-cite_ = createElement ("cite" :: Text)
+cite_ :: Element ps
+cite_ = domElem ("cite" :: JSString)
 
-code_ :: Element
-code_ = createElement ("code" :: Text)
+code_ :: Element ps
+code_ = domElem ("code" :: JSString)
 
-col_ :: Element
-col_ = createElement ("col" :: Text)
+col_ :: Element ps
+col_ = domElem ("col" :: JSString)
 
-colgroup_ :: Element
-colgroup_ = createElement ("colgroup" :: Text)
+colgroup_ :: Element ps
+colgroup_ = domElem ("colgroup" :: JSString)
 
-data_ :: Element
-data_ = createElement ("data" :: Text)
+data_ :: Element ps
+data_ = domElem ("data" :: JSString)
 
-datalist_ :: Element
-datalist_ = createElement ("datalist" :: Text)
+datalist_ :: Element ps
+datalist_ = domElem ("datalist" :: JSString)
 
-dd_ :: Element
-dd_ = createElement ("dd" :: Text)
+dd_ :: Element ps
+dd_ = domElem ("dd" :: JSString)
 
-del_ :: Element
-del_ = createElement ("del" :: Text)
+del_ :: Element ps
+del_ = domElem ("del" :: JSString)
 
-details_ :: Element
-details_ = createElement ("details" :: Text)
+details_ :: Element ps
+details_ = domElem ("details" :: JSString)
 
-dfn_ :: Element
-dfn_ = createElement ("dfn" :: Text)
+dfn_ :: Element ps
+dfn_ = domElem ("dfn" :: JSString)
 
-dialog_ :: Element
-dialog_ = createElement ("dialog" :: Text)
+dialog_ :: Element ps
+dialog_ = domElem ("dialog" :: JSString)
 
-div_ :: Element
-div_ = createElement ("div" :: Text)
+div_ :: Element ps
+div_ = domElem ("div" :: JSString)
 
-dl_ :: Element
-dl_ = createElement ("dl" :: Text)
+dl_ :: Element ps
+dl_ = domElem ("dl" :: JSString)
 
-dt_ :: Element
-dt_ = createElement ("dt" :: Text)
+dt_ :: Element ps
+dt_ = domElem ("dt" :: JSString)
 
-em_ :: Element
-em_ = createElement ("em" :: Text)
+em_ :: Element ps
+em_ = domElem ("em" :: JSString)
 
-embed_ :: Element
-embed_ = createElement ("embed" :: Text)
+embed_ :: Element ps
+embed_ = domElem ("embed" :: JSString)
 
-fieldset_ :: Element
-fieldset_ = createElement ("fieldset" :: Text)
+fieldset_ :: Element ps
+fieldset_ = domElem ("fieldset" :: JSString)
 
-figcaption_ :: Element
-figcaption_ = createElement ("figcaption" :: Text)
+figcaption_ :: Element ps
+figcaption_ = domElem ("figcaption" :: JSString)
 
-figure_ :: Element
-figure_ = createElement ("figure" :: Text)
+figure_ :: Element ps
+figure_ = domElem ("figure" :: JSString)
 
-footer_ :: Element
-footer_ = createElement ("footer" :: Text)
+footer_ :: Element ps
+footer_ = domElem ("footer" :: JSString)
 
-form_ :: Element
-form_ = createElement ("form" :: Text)
+form_ :: Element ps
+form_ = domElem ("form" :: JSString)
 
-h1_ :: Element
-h1_ = createElement ("h1" :: Text)
+h1_ :: Element ps
+h1_ = domElem ("h1" :: JSString)
 
-h2_ :: Element
-h2_ = createElement ("h2" :: Text)
+h2_ :: Element ps
+h2_ = domElem ("h2" :: JSString)
 
-h3_ :: Element
-h3_ = createElement ("h3" :: Text)
+h3_ :: Element ps
+h3_ = domElem ("h3" :: JSString)
 
-h4_ :: Element
-h4_ = createElement ("h4" :: Text)
+h4_ :: Element ps
+h4_ = domElem ("h4" :: JSString)
 
-h5_ :: Element
-h5_ = createElement ("h5" :: Text)
+h5_ :: Element ps
+h5_ = domElem ("h5" :: JSString)
 
-h6_ :: Element
-h6_ = createElement ("h6" :: Text)
+h6_ :: Element ps
+h6_ = domElem ("h6" :: JSString)
 
-head_ :: Element
-head_ = createElement ("head" :: Text)
+head_ :: Element ps
+head_ = domElem ("head" :: JSString)
 
-header_ :: Element
-header_ = createElement ("header" :: Text)
+header_ :: Element ps
+header_ = domElem ("header" :: JSString)
 
-hr_ :: Element
-hr_ = createElement ("hr" :: Text)
+hr_ :: Element ps
+hr_ = domElem ("hr" :: JSString)
 
-html_ :: Element
-html_ = createElement ("html" :: Text)
+html_ :: Element ps
+html_ = domElem ("html" :: JSString)
 
-i_ :: Element
-i_ = createElement ("i" :: Text)
+i_ :: Element ps
+i_ = domElem ("i" :: JSString)
 
-iframe_ :: Element
-iframe_ = createElement ("iframe" :: Text)
+iframe_ :: Element ps
+iframe_ = domElem ("iframe" :: JSString)
 
-img_ :: Element
-img_ = createElement ("img" :: Text)
+img_ :: Element ps
+img_ = domElem ("img" :: JSString)
 
-input_ :: Element
-input_ = createElement ("input" :: Text)
+input_ :: Element ps
+input_ = domElem ("input" :: JSString)
 
-ins_ :: Element
-ins_ = createElement ("ins" :: Text)
+ins_ :: Element ps
+ins_ = domElem ("ins" :: JSString)
 
-kbd_ :: Element
-kbd_ = createElement ("kbd" :: Text)
+kbd_ :: Element ps
+kbd_ = domElem ("kbd" :: JSString)
 
-keygen_ :: Element
-keygen_ = createElement ("keygen" :: Text)
+keygen_ :: Element ps
+keygen_ = domElem ("keygen" :: JSString)
 
-label_ :: Element
-label_ = createElement ("label" :: Text)
+label_ :: Element ps
+label_ = domElem ("label" :: JSString)
 
-legend_ :: Element
-legend_ = createElement ("legend" :: Text)
+legend_ :: Element ps
+legend_ = domElem ("legend" :: JSString)
 
-li_ :: Element
-li_ = createElement ("li" :: Text)
+li_ :: Element ps
+li_ = domElem ("li" :: JSString)
 
-link_ :: Element
-link_ = createElement ("link" :: Text)
+link_ :: Element ps
+link_ = domElem ("link" :: JSString)
 
-main_ :: Element
-main_ = createElement ("main" :: Text)
+main_ :: Element ps
+main_ = domElem ("main" :: JSString)
 
-map_ :: Element
-map_ = createElement ("map" :: Text)
+map_ :: Element ps
+map_ = domElem ("map" :: JSString)
 
-mark_ :: Element
-mark_ = createElement ("mark" :: Text)
+mark_ :: Element ps
+mark_ = domElem ("mark" :: JSString)
 
-menu_ :: Element
-menu_ = createElement ("menu" :: Text)
+menu_ :: Element ps
+menu_ = domElem ("menu" :: JSString)
 
-menuitem_ :: Element
-menuitem_ = createElement ("menuitem" :: Text)
+menuitem_ :: Element ps
+menuitem_ = domElem ("menuitem" :: JSString)
 
-meta_ :: Element
-meta_ = createElement ("meta" :: Text)
+meta_ :: Element ps
+meta_ = domElem ("meta" :: JSString)
 
-meter_ :: Element
-meter_ = createElement ("meter" :: Text)
+meter_ :: Element ps
+meter_ = domElem ("meter" :: JSString)
 
-nav_ :: Element
-nav_ = createElement ("nav" :: Text)
+nav_ :: Element ps
+nav_ = domElem ("nav" :: JSString)
 
-noscript_ :: Element
-noscript_ = createElement ("noscript" :: Text)
+noscript_ :: Element ps
+noscript_ = domElem ("noscript" :: JSString)
 
-object_ :: Element
-object_ = createElement ("object" :: Text)
+object_ :: Element ps
+object_ = domElem ("object" :: JSString)
 
-ol_ :: Element
-ol_ = createElement ("ol" :: Text)
+ol_ :: Element ps
+ol_ = domElem ("ol" :: JSString)
 
-optgroup_ :: Element
-optgroup_ = createElement ("optgroup" :: Text)
+optgroup_ :: Element ps
+optgroup_ = domElem ("optgroup" :: JSString)
 
-option_ :: Element
-option_ = createElement ("option" :: Text)
+option_ :: Element ps
+option_ = domElem ("option" :: JSString)
 
-output_ :: Element
-output_ = createElement ("output" :: Text)
+output_ :: Element ps
+output_ = domElem ("output" :: JSString)
 
-p_ :: Element
-p_ = createElement ("p" :: Text)
+p_ :: Element ps
+p_ = domElem ("p" :: JSString)
 
-param_ :: Element
-param_ = createElement ("param" :: Text)
+param_ :: Element ps
+param_ = domElem ("param" :: JSString)
 
-picture_ :: Element
-picture_ = createElement ("picture" :: Text)
+picture_ :: Element ps
+picture_ = domElem ("picture" :: JSString)
 
-pre_ :: Element
-pre_ = createElement ("pre" :: Text)
+pre_ :: Element ps
+pre_ = domElem ("pre" :: JSString)
 
-progress_ :: Element
-progress_ = createElement ("progress" :: Text)
+progress_ :: Element ps
+progress_ = domElem ("progress" :: JSString)
 
-q_ :: Element
-q_ = createElement ("q" :: Text)
+q_ :: Element ps
+q_ = domElem ("q" :: JSString)
 
-rp_ :: Element
-rp_ = createElement ("rp" :: Text)
+rp_ :: Element ps
+rp_ = domElem ("rp" :: JSString)
 
-rt_ :: Element
-rt_ = createElement ("rt" :: Text)
+rt_ :: Element ps
+rt_ = domElem ("rt" :: JSString)
 
-ruby_ :: Element
-ruby_ = createElement ("ruby" :: Text)
+ruby_ :: Element ps
+ruby_ = domElem ("ruby" :: JSString)
 
-s_ :: Element
-s_ = createElement ("s" :: Text)
+s_ :: Element ps
+s_ = domElem ("s" :: JSString)
 
-samp_ :: Element
-samp_ = createElement ("samp" :: Text)
+samp_ :: Element ps
+samp_ = domElem ("samp" :: JSString)
 
-script_ :: Element
-script_ = createElement ("script" :: Text)
+script_ :: Element ps
+script_ = domElem ("script" :: JSString)
 
-section_ :: Element
-section_ = createElement ("section" :: Text)
+section_ :: Element ps
+section_ = domElem ("section" :: JSString)
 
-select_ :: Element
-select_ = createElement ("select" :: Text)
+select_ :: Element ps
+select_ = domElem ("select" :: JSString)
 
-small_ :: Element
-small_ = createElement ("small" :: Text)
+small_ :: Element ps
+small_ = domElem ("small" :: JSString)
 
-source_ :: Element
-source_ = createElement ("source" :: Text)
+source_ :: Element ps
+source_ = domElem ("source" :: JSString)
 
-span_ :: Element
-span_ = createElement ("span" :: Text)
+span_ :: Element ps
+span_ = domElem ("span" :: JSString)
 
-strong_ :: Element
-strong_ = createElement ("strong" :: Text)
+strong_ :: Element ps
+strong_ = domElem ("strong" :: JSString)
 
-style_ :: Element
-style_ = createElement ("style" :: Text)
+style_ :: Element ps
+style_ = domElem ("style" :: JSString)
 
-sub_ :: Element
-sub_ = createElement ("sub" :: Text)
+sub_ :: Element ps
+sub_ = domElem ("sub" :: JSString)
 
-summary_ :: Element
-summary_ = createElement ("summary" :: Text)
+summary_ :: Element ps
+summary_ = domElem ("summary" :: JSString)
 
-sup_ :: Element
-sup_ = createElement ("sup" :: Text)
+sup_ :: Element ps
+sup_ = domElem ("sup" :: JSString)
 
-table_ :: Element
-table_ = createElement ("table" :: Text)
+table_ :: Element ps
+table_ = domElem ("table" :: JSString)
 
-tbody_ :: Element
-tbody_ = createElement ("tbody" :: Text)
+tbody_ :: Element ps
+tbody_ = domElem ("tbody" :: JSString)
 
-td_ :: Element
-td_ = createElement ("td" :: Text)
+td_ :: Element ps
+td_ = domElem ("td" :: JSString)
 
-textarea_ :: Element
-textarea_ = createElement ("textarea" :: Text)
+textarea_ :: Element ps
+textarea_ = domElem ("textarea" :: JSString)
 
-tfoot_ :: Element
-tfoot_ = createElement ("tfoot" :: Text)
+tfoot_ :: Element ps
+tfoot_ = domElem ("tfoot" :: JSString)
 
-th_ :: Element
-th_ = createElement ("th" :: Text)
+th_ :: Element ps
+th_ = domElem ("th" :: JSString)
 
-thead_ :: Element
-thead_ = createElement ("thead" :: Text)
+thead_ :: Element ps
+thead_ = domElem ("thead" :: JSString)
 
-time_ :: Element
-time_ = createElement ("time" :: Text)
+time_ :: Element ps
+time_ = domElem ("time" :: JSString)
 
-title_ :: Element
-title_ = createElement ("title" :: Text)
+title_ :: Element ps
+title_ = domElem ("title" :: JSString)
 
-tr_ :: Element
-tr_ = createElement ("tr" :: Text)
+tr_ :: Element ps
+tr_ = domElem ("tr" :: JSString)
 
-track_ :: Element
-track_ = createElement ("track" :: Text)
+track_ :: Element ps
+track_ = domElem ("track" :: JSString)
 
-u_ :: Element
-u_ = createElement ("u" :: Text)
+u_ :: Element ps
+u_ = domElem ("u" :: JSString)
 
-ul_ :: Element
-ul_ = createElement ("ul" :: Text)
+ul_ :: Element ps
+ul_ = domElem ("ul" :: JSString)
 
-var_ :: Element
-var_ = createElement ("var" :: Text)
+var_ :: Element ps
+var_ = domElem ("var" :: JSString)
 
-video_ :: Element
-video_ = createElement ("video" :: Text)
+video_ :: Element ps
+video_ = domElem ("video" :: JSString)
 
-wbr_ :: Element
-wbr_ = createElement ("wbr" :: Text)
+wbr_ :: Element ps
+wbr_ = domElem ("wbr" :: JSString)
 
-circle_ :: Element
-circle_ = createElement ("circle" :: Text)
+circle_ :: Element ps
+circle_ = domElem ("circle" :: JSString)
 
-defs_ :: Element
-defs_ = createElement ("defs" :: Text)
+defs_ :: Element ps
+defs_ = domElem ("defs" :: JSString)
 
-ellipse_ :: Element
-ellipse_ = createElement ("ellipse" :: Text)
+ellipse_ :: Element ps
+ellipse_ = domElem ("ellipse" :: JSString)
 
-g_ :: Element
-g_ = createElement ("g" :: Text)
+g_ :: Element ps
+g_ = domElem ("g" :: JSString)
 
-line_ :: Element
-line_ = createElement ("line" :: Text)
+line_ :: Element ps
+line_ = domElem ("line" :: JSString)
 
-linearGradient_ :: Element
-linearGradient_ = createElement ("linearGradient" :: Text)
+linearGradient_ :: Element ps
+linearGradient_ = domElem ("linearGradient" :: JSString)
 
-mask_ :: Element
-mask_ = createElement ("mask" :: Text)
+mask_ :: Element ps
+mask_ = domElem ("mask" :: JSString)
 
-path_ :: Element
-path_ = createElement ("path" :: Text)
+path_ :: Element ps
+path_ = domElem ("path" :: JSString)
 
-pattern_ :: Element
-pattern_ = createElement ("pattern" :: Text)
+pattern_ :: Element ps
+pattern_ = domElem ("pattern" :: JSString)
 
-polygon_ :: Element
-polygon_ = createElement ("polygon" :: Text)
+polygon_ :: Element ps
+polygon_ = domElem ("polygon" :: JSString)
 
-polyline_ :: Element
-polyline_ = createElement ("polyline" :: Text)
+polyline_ :: Element ps
+polyline_ = domElem ("polyline" :: JSString)
 
-radialGradient_ :: Element
-radialGradient_ = createElement ("radialGradient" :: Text)
+radialGradient_ :: Element ps
+radialGradient_ = domElem ("radialGradient" :: JSString)
 
-rect_ :: Element
-rect_ = createElement ("rect" :: Text)
+rect_ :: Element ps
+rect_ = domElem ("rect" :: JSString)
 
-stop_ :: Element
-stop_ = createElement ("stop" :: Text)
+stop_ :: Element ps
+stop_ = domElem ("stop" :: JSString)
 
-svg_ :: Element
-svg_ = createElement ("svg" :: Text)
+svg_ :: Element ps
+svg_ = domElem ("svg" :: JSString)
 
-text_ :: Element
-text_ = createElement ("text" :: Text)
+text_ :: Element ps
+text_ = domElem ("text" :: JSString)
 
-tspan_ :: Element
-tspan_ = createElement ("tspan" :: Text)
+tspan_ :: Element ps
+tspan_ = domElem ("tspan" :: JSString)
