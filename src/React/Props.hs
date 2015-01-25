@@ -6,21 +6,19 @@ import Control.Monad
 import Data.Text (Text, singleton)
 import Data.HashMap.Strict (HashMap)
 import GHCJS.Foreign
+import GHCJS.Marshal
 import GHCJS.Types
-import React.Types (Prop', Prop, HandlerProp, ClipboardEvent, KeyboardEvent,
+import React.Types (Prop(..), HandlerProp, ClipboardEvent, KeyboardEvent,
                     FocusEvent, FormEvent, MouseEvent, TouchEvent, UiEvent, WheelEvent)
 
-present :: Lens' (Maybe JSString) Bool
-present = lens getter setter
-  where
-    getter Nothing = False
-    getter (Just _) = True
+defaultProp :: (ToJSRef a, FromJSRef a) => JSString -> Prop a
+defaultProp n = Prop
+  { propName = n
+  , propRead = fromJSRef . castRef
+  , propMake = fmap castRef . toJSRef
+  }
 
-    setter _ False = Nothing
-    setter _ True = Just ""
-
-jsString :: (ToJSString a, FromJSString a) => Iso' a JSString
-jsString = iso toJSString fromJSString
+handlerProp = HandlerProp
 
 {-
 data AcceptAttribute = Extension
@@ -35,28 +33,28 @@ accept :: [AcceptAttribute] -> Prop
 
 -- TODO: make it better than just Text
 acceptCharset :: Prop JSString
-acceptCharset = at "acceptCharset"
+acceptCharset = defaultProp "acceptCharset"
 
-accessKey :: Prop Char
-accessKey = at "accessKey" . lens getter setter
-  where
-    getter t = join $ fmap (fmap fst . (\x -> uncons (x :: Text)) . fromJSString) t
-    setter _ = fmap (toJSString . singleton)
+-- accessKey :: Prop Char
+-- accessKey = defaultProp "accessKey" . lens getter setter
+--   where
+--     getter t = join $ fmap (fmap fst . (\x -> uncons (x :: Text)) . fromJSString) t
+--     setter _ = fmap (toJSString . singleton)
 
 action :: Prop JSString
-action = at "action"
+action = defaultProp "action"
 
-allowFullScreen :: Prop' Bool
-allowFullScreen = at "allowFullScreen" . present
+allowFullScreen :: Prop Bool
+allowFullScreen = defaultProp "allowFullScreen"
 
-allowTransparency :: Prop' Bool
-allowTransparency = at "allowTransparency" . present
+allowTransparency :: Prop Bool
+allowTransparency = defaultProp "allowTransparency"
 
 alt :: Prop JSString
-alt = at "alt"
+alt = defaultProp "alt"
 
-async :: Prop' Bool
-async = at "async" . present
+async :: Prop Bool
+async = defaultProp "async"
 
 {-
 
@@ -78,7 +76,7 @@ classID :: Prop JSString
 -}
 
 className :: Prop JSString
-className = at "className"
+className = defaultProp "className"
 
 {-
 cols :: Prop Int
@@ -113,8 +111,8 @@ data TextDirection = RightToLeft | LeftToRight | Auto
 dir :: Prop TextDirection
 -}
 
-disabled :: Prop' Bool
-disabled = at "disabled" . present
+disabled :: Prop Bool
+disabled = defaultProp "disabled"
 
 {-
 download :: Prop Bool
@@ -137,7 +135,7 @@ hidden :: Prop Bool
 -}
 -- TODO URI
 href :: Prop JSString
-href = at "href"
+href = defaultProp "href"
 
 {-
 hrefLang :: Prop Text
@@ -153,10 +151,10 @@ icon :: Prop Text
 -}
 
 id_ :: Prop JSString
-id_ = at "id"
+id_ = defaultProp "id"
 
 label :: Prop JSString
-label = at "label"
+label = defaultProp "label"
 
 {-
 lang :: Prop Text
@@ -207,14 +205,14 @@ radioGroup :: Prop Text
 readOnly :: Prop Bool
 -}
 rel :: Prop JSString
-rel = at "rel"
+rel = defaultProp "rel"
 
 {-
 required :: Prop Bool
 -}
 
 role :: Prop JSString
-role = at "role"
+role = defaultProp "role"
 
 {-
 rows :: Prop Int
@@ -290,7 +288,7 @@ itemType :: Prop Text
 -}
 
 dangerouslySetInnerHTML :: Prop JSString
-dangerouslySetInnerHTML = at "dangerouslySetInnerHTML"
+dangerouslySetInnerHTML = defaultProp "dangerouslySetInnerHTML"
 
 {-
 cx
@@ -339,113 +337,105 @@ y
 aria
 -}
 
-casted :: Functor f => Lens' (f (JSRef a)) (f (JSRef b))
-casted = lens (fmap castRef) (\_ b -> fmap castRef b)
-{-# INLINE casted #-}
-
-prop :: Text -> Prop (JSRef a)
-prop t = at t . casted
-
--- TODO Clean up all retained JSFuns in componentWillUnmount? Other places?
 onCopy :: HandlerProp ClipboardEvent 
-onCopy = prop "onCopy" . casted
+onCopy = handlerProp "onCopy"
 
 onCut :: HandlerProp ClipboardEvent
-onCut = prop "onCut" . casted
+onCut = handlerProp "onCut"
 
 onPaste :: HandlerProp ClipboardEvent
-onPaste = prop "onPaste" . casted
+onPaste = handlerProp "onPaste"
 
 onKeyDown :: HandlerProp KeyboardEvent
-onKeyDown = prop "onKeyDown" . casted
+onKeyDown = handlerProp "onKeyDown"
 
 onKeyPress :: HandlerProp KeyboardEvent
-onKeyPress = prop "onKeyPress" . casted
+onKeyPress = handlerProp "onKeyPress"
 
 onKeyUp :: HandlerProp KeyboardEvent
-onKeyUp = prop "onKeyUp" . casted
+onKeyUp = handlerProp "onKeyUp"
 
 onFocus :: HandlerProp FocusEvent
-onFocus = prop "onFocus" . casted
+onFocus = handlerProp "onFocus"
 
 onBlur :: HandlerProp FocusEvent
-onBlur = prop "onBlur" . casted
+onBlur = handlerProp "onBlur"
 
 onChange :: HandlerProp FormEvent
-onChange = prop "onChange" . casted
+onChange = handlerProp "onChange"
 
 onInput :: HandlerProp FormEvent
-onInput = prop "onInput" . casted
+onInput = handlerProp "onInput"
 
 onSubmit :: HandlerProp FormEvent
-onSubmit = prop "onSubmit" . casted
+onSubmit = handlerProp "onSubmit"
 
 onClick :: HandlerProp MouseEvent
-onClick = prop "onClick" . casted
+onClick = handlerProp "onClick"
 
 onDoubleClick :: HandlerProp MouseEvent
-onDoubleClick = prop "onDoubleClick" . casted
+onDoubleClick = handlerProp "onDoubleClick"
 
 onDrag :: HandlerProp MouseEvent
-onDrag = prop "onDrag" . casted
+onDrag = handlerProp "onDrag"
 
 onDragEnd :: HandlerProp MouseEvent
-onDragEnd = prop "onDragEnd" . casted
+onDragEnd = handlerProp "onDragEnd"
 
 onDragEnter :: HandlerProp MouseEvent
-onDragEnter = prop "onDragEnter" . casted
+onDragEnter = handlerProp "onDragEnter"
 
 onDragExit :: HandlerProp MouseEvent
-onDragExit = prop "onDragExit" . casted
+onDragExit = handlerProp "onDragExit"
 
 onDragLeave :: HandlerProp MouseEvent
-onDragLeave = prop "onDragLeave" . casted
+onDragLeave = handlerProp "onDragLeave"
 
 onDragOver :: HandlerProp MouseEvent
-onDragOver = prop "onDragOver" . casted
+onDragOver = handlerProp "onDragOver"
 
 onDragStart :: HandlerProp MouseEvent
-onDragStart = prop "onDragStart" . casted
+onDragStart = handlerProp "onDragStart"
 
 onDrop :: HandlerProp MouseEvent
-onDrop = prop "onDrop" . casted
+onDrop = handlerProp "onDrop"
 
 onMouseDown :: HandlerProp MouseEvent
-onMouseDown = prop "onMouseDown" . casted
+onMouseDown = handlerProp "onMouseDown"
 
 onMouseEnter :: HandlerProp MouseEvent
-onMouseEnter = prop "onMouseEnter" . casted
+onMouseEnter = handlerProp "onMouseEnter"
 
 onMouseLeave :: HandlerProp MouseEvent
-onMouseLeave = prop "onMouseLeave" . casted
+onMouseLeave = handlerProp "onMouseLeave"
 
 onMouseMove :: HandlerProp MouseEvent
-onMouseMove = prop "onMouseMove" . casted
+onMouseMove = handlerProp "onMouseMove"
 
 onMouseOut :: HandlerProp MouseEvent
-onMouseOut = prop "onMouseOut" . casted
+onMouseOut = handlerProp "onMouseOut"
 
 onMouseOver :: HandlerProp MouseEvent
-onMouseOver = prop "onMouseOver" . casted
+onMouseOver = handlerProp "onMouseOver"
 
 onMouseUp :: HandlerProp MouseEvent
-onMouseUp = prop "onMouseUp" . casted
+onMouseUp = handlerProp "onMouseUp"
 
 onTouchCancel :: HandlerProp TouchEvent
-onTouchCancel = prop "onTouchCancel" . casted
+onTouchCancel = handlerProp "onTouchCancel"
 
 onTouchEnd :: HandlerProp TouchEvent
-onTouchEnd = prop "onTouchEnd" . casted
+onTouchEnd = handlerProp "onTouchEnd"
 
 onTouchMove :: HandlerProp TouchEvent
-onTouchMove = prop "onTouchMove" . casted
+onTouchMove = handlerProp "onTouchMove"
 
 onTouchStart :: HandlerProp TouchEvent
-onTouchStart = prop "onTouchStart" . casted
+onTouchStart = handlerProp "onTouchStart"
 
 onScroll :: HandlerProp UiEvent
-onScroll = prop "onScroll" . casted
+onScroll = handlerProp "onScroll"
 
 onWheel :: HandlerProp WheelEvent
-onWheel = prop "onWheel" . casted
+onWheel = handlerProp "onWheel"
 
